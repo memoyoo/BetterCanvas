@@ -1,0 +1,6 @@
+node_modules
+node_modules_from_temp
+.next
+stitch_canvas_scholar_hub
+*.png
+*.zip

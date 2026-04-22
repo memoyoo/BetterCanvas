@@ -1,0 +1,157 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --font-sans: var(--font-plus-jakarta);
+  --font-mono: var(--font-jetbrains-mono);
+  --radius-sm: calc(var(--radius) - 0.5rem);
+  --radius-md: calc(var(--radius) - 0.25rem);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 0.5rem);
+  --radius-2xl: calc(var(--radius) + 1rem);
+}
+
+:root {
+  --background: #09090d;
+  --foreground: #f5f3ff;
+  --card: rgba(17, 17, 24, 0.78);
+  --card-foreground: #f5f3ff;
+  --popover: rgba(11, 11, 18, 0.94);
+  --popover-foreground: #f5f3ff;
+  --primary: #cfbcff;
+  --primary-foreground: #170f28;
+  --secondary: #8ec5ff;
+  --secondary-foreground: #0d1830;
+  --muted: rgba(255, 255, 255, 0.06);
+  --muted-foreground: #b6b1c9;
+  --accent: rgba(255, 255, 255, 0.08);
+  --accent-foreground: #f5f3ff;
+  --destructive: #ff8e9d;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: rgba(207, 188, 255, 0.55);
+  --sidebar: rgba(7, 7, 12, 0.82);
+  --sidebar-foreground: #f5f3ff;
+  --sidebar-border: rgba(255, 255, 255, 0.06);
+  --radius: 1.25rem;
+  --border-strong: rgba(255, 255, 255, 0.14);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    background:
+      radial-gradient(
+        circle at top left,
+        rgba(124, 92, 255, 0.22),
+        transparent 24rem
+      ),
+      radial-gradient(
+        circle at top right,
+        rgba(27, 121, 255, 0.2),
+        transparent 20rem
+      ),
+      radial-gradient(
+        circle at bottom center,
+        rgba(59, 130, 246, 0.12),
+        transparent 26rem
+      ),
+      var(--background);
+    color: var(--foreground);
+    min-height: 100vh;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: rgba(207, 188, 255, 0.32);
+    color: var(--foreground);
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(15, 15, 22, 0.72);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+  }
+
+  .glow-ring {
+    box-shadow:
+      0 0 0 1px rgba(207, 188, 255, 0.1),
+      0 20px 50px rgba(124, 92, 255, 0.1);
+  }
+
+  .surface-border {
+    position: relative;
+  }
+
+  .surface-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      rgba(207, 188, 255, 0.55),
+      rgba(142, 197, 255, 0.18),
+      rgba(255, 255, 255, 0.05)
+    );
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .pulse-dot {
+    animation: pulse-dot 2s infinite;
+  }
+}
+
+@keyframes pulse-dot {
+  0% {
+    box-shadow: 0 0 0 0 rgba(207, 188, 255, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(207, 188, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(207, 188, 255, 0);
+  }
+}
