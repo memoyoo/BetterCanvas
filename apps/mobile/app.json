@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "BetterCanvas",
+    "slug": "bettercanvas",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "bettercanvas",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#09090d"
+    },
+    "plugins": ["expo-router"],
+    "ios": {
+      "bundleIdentifier": "com.bettercanvas.app",
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#09090d"
+      },
+      "package": "com.bettercanvas.app",
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

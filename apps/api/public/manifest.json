@@ -1,0 +1,16 @@
+{
+  "name": "BetterCanvas",
+  "short_name": "BetterCanvas",
+  "description": "A student-first Canvas companion that brings coursework, messaging, planning, and AI tutoring into one focused workspace.",
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "background_color": "#09090d",
+  "theme_color": "#cfbcff",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
